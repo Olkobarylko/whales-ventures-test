@@ -1,0 +1,109 @@
+.blog {
+  padding: 4rem 0;
+  &__wrapper {
+    margin-top: 4rem;
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  &__filter {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    &-item {
+      position: relative;
+      padding: 0.6rem 3rem;
+      border: 1px solid rgb(211, 211, 211);
+      border-radius: 1rem;
+      font-size: 1.6rem;
+
+      &:has(input:checked) {
+        background-color: rgb(204, 204, 204);
+      }
+
+      input {
+        margin: 0;
+        position: absolute;
+        z-index: 10;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__post {
+    width: calc((100% / 3) - 6rem / 3);
+    border-radius: 3rem;
+    overflow: hidden;
+    box-shadow: 0 0 0.5rem #dadada;
+    transition: ease-in-out 0.3s transform;
+
+    @media (max-width: 991px) {
+      width: calc(50% - 1.5rem);
+    }
+
+    @media (max-width: 575px) {
+      width: 100%;
+    }
+
+    &:hover {
+      transform: translateY(-2rem);
+    }
+
+    &-image {
+      width: 100%;
+      height: 20rem;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-info {
+      padding: 2rem;
+    }
+
+    &-meta {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+
+    &-title {
+      font-size: 2.6rem;
+      margin-bottom: 1rem;
+      color: #000000;
+    }
+
+    &-description {
+      font-size: 1.4rem;
+      color: #000000;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &-category {
+      font-size: 1.8rem;
+      color: #000000;
+    }
+
+    &-time {
+      font-size: 1.2rem;
+      color: #000000;
+    }
+  }
+}

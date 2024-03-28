@@ -1,0 +1,25 @@
+.header {
+  padding: 2rem 0;
+
+  &__navigation {
+    .menu {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-size: 1.8rem;
+      color: #000000;
+    }
+
+    .current-menu-item {
+      text-decoration: underline;
+    }
+
+    a {
+      color: inherit;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
